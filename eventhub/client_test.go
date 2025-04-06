@@ -34,7 +34,7 @@ func TestClient_Subscribe(t *testing.T) {
 	if cs == "" {
 		t.Fatal("$TEST_EVENTHUB_CONNECTION_STRING is empty")
 	}
-	c, err := DialConnectionString(cs)
+	c, err := DialConnectionString(context.Background(), cs)
 	if err != nil {
 		t.Fatal(err)
 	}
